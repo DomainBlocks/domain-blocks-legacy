@@ -5,14 +5,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="EventStore.Client.Grpc" Version="23.2.1" />
-        <PackageReference Include="EventStore.Client.Grpc.PersistentSubscriptions" Version="23.2.1" />
-        <PackageReference Include="EventStore.Client.Grpc.Streams" Version="23.2.1" />
-        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
-        <PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" Version="8.0.0" />
-        <PackageReference Update="Nerdbank.GitVersioning">
-          <Version>3.6.133</Version>
-        </PackageReference>
+        <PackageReference Include="EventStore.Client.Grpc" Version="23.3.7" />
+        <PackageReference Include="EventStore.Client.Grpc.PersistentSubscriptions" Version="23.3.7" />
+        <PackageReference Include="EventStore.Client.Grpc.Streams" Version="23.3.7" />
+        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" Version="9.0.0" />
     </ItemGroup>
 
 </Project>

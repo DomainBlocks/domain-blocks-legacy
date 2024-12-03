@@ -1,7 +1,7 @@
 <Project>
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <LangVersion>12.0</LangVersion>
+        <TargetFramework>net9.0</TargetFramework>
+        <LangVersion>13.0</LangVersion>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <ImplicitUsings>enable</ImplicitUsings>
@@ -10,7 +10,7 @@
 
     <ItemGroup>
         <PackageReference Include="Nerdbank.GitVersioning">
-            <Version>3.6.133</Version>
+            <Version>3.6.146</Version>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
     </ItemGroup>
