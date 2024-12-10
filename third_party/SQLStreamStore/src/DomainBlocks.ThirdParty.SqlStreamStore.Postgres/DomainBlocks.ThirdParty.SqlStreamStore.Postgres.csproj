@@ -1,15 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Npgsql" Version="8.0.3" />
-      <PackageReference Update="Nerdbank.GitVersioning">
-        <Version>3.6.133</Version>
-      </PackageReference>
+      <PackageReference Include="Npgsql" Version="9.0.1" />
     </ItemGroup>
 
     <ItemGroup>

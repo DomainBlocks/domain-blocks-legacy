@@ -1,18 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\..\src\DomainBlocks.Logging\DomainBlocks.Logging.csproj" />
     </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Update="Nerdbank.GitVersioning">
-        <Version>3.6.133</Version>
-      </PackageReference>
-    </ItemGroup>
-
 </Project>
