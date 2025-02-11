@@ -7,13 +7,12 @@ networks:
 
 services:
   shopping-eventstore:
-    image: eventstore/eventstore:23.10.1-bookworm-slim
+    image: eventstore/eventstore:24.10.1-bookworm-slim
     ports:
       - '2113:2113'
-      - '1113:1113'
     environment:
-      - EVENTSTORE_HTTP_PORT=2113
-      - EVENTSTORE_EXT_TCP_PORT=1113
+      - EVENTSTORE_NODE_PORT=2113
+      - EVENTSTORE_DISABLE_HTTP_CACHING=true
       - EVENTSTORE_RUN_PROJECTIONS=all
       - EVENTSTORE_START_STANDARD_PROJECTIONS=true
       - EVENTSTORE_INSECURE=true
