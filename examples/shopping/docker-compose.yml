@@ -26,6 +26,12 @@ services:
         target: /var/log/eventstore
     networks:
       - shopping-network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:2113/web/index.html" ]
+      interval: 10s
+      retries: 5
+      start_period: 20s
+      timeout: 5s
 
   shopping-api:
     build:
@@ -36,7 +42,8 @@ services:
       - "5039:8080"
       - "7025:443"
     depends_on:
-      - shopping-eventstore
+      shopping-eventstore:
+        condition: service_healthy
     environment:
       - ASPNETCORE_URLS=http://+:8080
     networks:
