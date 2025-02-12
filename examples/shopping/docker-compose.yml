@@ -33,10 +33,12 @@ services:
       dockerfile: examples/shopping/Shopping.Api/Dockerfile
     image: shopping-api
     ports:
-      - "5039:80"
+      - "5039:8080"
       - "7025:443"
     depends_on:
       - shopping-eventstore
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
     networks:
       - shopping-network
 
