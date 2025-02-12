@@ -2,4 +2,4 @@ version: '3.8'
 
 services:
   shopping-eventstore:
-    image: eventstore/eventstore:23.10.1-alpha-arm64v8
+    image: eventstore/eventstore:24.10.1-alpha-arm64v8
