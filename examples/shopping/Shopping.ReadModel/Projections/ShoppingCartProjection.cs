@@ -16,7 +16,6 @@ public class ShoppingCartProjection :
     private const string CheckpointName = nameof(ShoppingCartProjection);
     private readonly IDbContextFactory<ShoppingCartDbContext> _dbContextFactory;
     private ShoppingCartDbContext? _currentDbContext;
-    private readonly Random _random = new();
 
     public ShoppingCartProjection(IDbContextFactory<ShoppingCartDbContext> dbContextFactory)
     {
@@ -39,12 +38,6 @@ public class ShoppingCartProjection :
 
     public async Task OnEventAsync(EventHandlerContext<ItemAddedToShoppingCart> context)
     {
-        var isError = _random.Next(2) == 1;
-        if (isError)
-        {
-            throw new Exception("Something bad happened.");
-        }
-
         var item = await DbContext.ShoppingCartItems.FindAsync(
             new object[] { context.Event.SessionId, context.Event.Item }, context.CancellationToken);
 
