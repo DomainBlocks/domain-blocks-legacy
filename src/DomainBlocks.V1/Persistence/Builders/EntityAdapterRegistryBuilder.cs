@@ -5,7 +5,7 @@ namespace DomainBlocks.V1.Persistence.Builders;
 public class EntityAdapterRegistryBuilder
 {
     private readonly Dictionary<Type, IEntityAdapter> _adapters = new();
-    private readonly List<GenericEntityAdapterFactoryBuilder> _factoryBuilders = new();
+    private readonly List<GenericEntityAdapterFactoryBuilder> _factoryBuilders = [];
 
     public EntityAdapterRegistryBuilder Add<TEntity>(IEntityAdapter<TEntity> entityAdapter) where TEntity : notnull
     {

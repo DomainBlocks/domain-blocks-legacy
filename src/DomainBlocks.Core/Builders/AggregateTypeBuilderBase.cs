@@ -13,7 +13,7 @@ public abstract class AggregateTypeBuilderBase<TAggregate, TEventBase> :
 
     internal IAutoAggregateEventTypeBuilder<TAggregate>? AutoEventTypeBuilder { get; set; }
 
-    internal List<IAggregateEventTypeBuilder<TAggregate>> EventTypeBuilders { get; } = new();
+    internal List<IAggregateEventTypeBuilder<TAggregate>> EventTypeBuilders { get; } = [];
 
     /// <summary>
     /// Finds events deriving from type <see cref="TEventBase"/> in the specified assembly, and adds them to the

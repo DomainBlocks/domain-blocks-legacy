@@ -5,7 +5,7 @@ namespace DomainBlocks.V1.Tests.Integration.Model;
 public class MutableShoppingCart : MutableEntityBase
 {
     private Guid _sessionId = Guid.Empty;
-    private readonly List<ShoppingCartItem> _items = new();
+    private readonly List<ShoppingCartItem> _items = [];
 
     public override Guid Id => _sessionId;
 

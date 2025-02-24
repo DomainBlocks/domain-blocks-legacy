@@ -4,7 +4,7 @@ namespace Shopping.Domain;
 
 public abstract class AggregateBase
 {
-    private readonly List<IDomainEvent> _raisedEvents = new();
+    private readonly List<IDomainEvent> _raisedEvents = [];
 
     public abstract Guid Id { get; }
     public IEnumerable<IDomainEvent> RaisedEvents => _raisedEvents.AsReadOnly();

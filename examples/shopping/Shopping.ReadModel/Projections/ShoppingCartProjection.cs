@@ -27,7 +27,7 @@ public class ShoppingCartProjection :
     public async Task OnEventAsync(EventHandlerContext<ShoppingSessionStarted> context)
     {
         var cart = await DbContext.ShoppingCarts.FindAsync(
-            new object?[] { context.Event.SessionId }, cancellationToken: context.CancellationToken);
+            [context.Event.SessionId], cancellationToken: context.CancellationToken);
 
         if (cart == null)
         {
@@ -39,7 +39,7 @@ public class ShoppingCartProjection :
     public async Task OnEventAsync(EventHandlerContext<ItemAddedToShoppingCart> context)
     {
         var item = await DbContext.ShoppingCartItems.FindAsync(
-            new object[] { context.Event.SessionId, context.Event.Item }, context.CancellationToken);
+            [context.Event.SessionId, context.Event.Item], context.CancellationToken);
 
         if (item == null)
         {
@@ -54,7 +54,7 @@ public class ShoppingCartProjection :
     public async Task OnEventAsync(EventHandlerContext<ItemRemovedFromShoppingCart> context)
     {
         var itemToRemove = await DbContext.ShoppingCartItems.FindAsync(
-            new object[] { context.Event.SessionId, context.Event.Item }, context.CancellationToken);
+            [context.Event.SessionId, context.Event.Item], context.CancellationToken);
 
         if (itemToRemove != null)
         {
@@ -70,7 +70,7 @@ public class ShoppingCartProjection :
 
     public async Task<SubscriptionPosition?> OnRestoreAsync(CancellationToken cancellationToken)
     {
-        var bookmark = await DbContext.Checkpoints.FindAsync(new object[] { CheckpointName }, cancellationToken);
+        var bookmark = await DbContext.Checkpoints.FindAsync([CheckpointName], cancellationToken);
         return bookmark == null ? null : new SubscriptionPosition(bookmark.Position);
     }
 
@@ -82,7 +82,7 @@ public class ShoppingCartProjection :
             return;
         }
 
-        var checkpoint = await DbContext.Checkpoints.FindAsync(new object[] { CheckpointName }, cancellationToken);
+        var checkpoint = await DbContext.Checkpoints.FindAsync([CheckpointName], cancellationToken);
         if (checkpoint == null)
         {
             checkpoint = new Checkpoint { Name = CheckpointName };

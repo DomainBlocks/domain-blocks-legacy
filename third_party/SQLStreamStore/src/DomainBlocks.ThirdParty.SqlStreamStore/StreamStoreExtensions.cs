@@ -190,7 +190,7 @@
             NewStreamMessage message,
             CancellationToken cancellationToken = default)
         {
-            return store.AppendToStream(streamId, expectedVersion, new[] { message }, cancellationToken);
+            return store.AppendToStream(streamId, expectedVersion, [message], cancellationToken);
         }
     }
 }

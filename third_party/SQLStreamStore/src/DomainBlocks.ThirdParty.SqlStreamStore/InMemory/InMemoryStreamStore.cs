@@ -21,7 +21,7 @@ namespace SqlStreamStore
     /// </summary>
     public sealed class InMemoryStreamStore : StreamStoreBase
     {
-        private readonly InMemoryAllStream _allStream = new InMemoryAllStream();
+        private readonly InMemoryAllStream _allStream = [];
         private readonly GetUtcNow _getUtcNow;
         private readonly ReaderWriterLockSlim _lock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
         private readonly Action _onStreamAppended;
@@ -181,7 +181,7 @@ namespace SqlStreamStore
                 if (deleted)
                 {
                     var eventDeletedEvent = CreateMessageDeletedMessage(streamId, eventId);
-                    AppendToStreamInternal(DeletedStreamId, ExpectedVersion.Any, new[] { eventDeletedEvent });
+                    AppendToStreamInternal(DeletedStreamId, ExpectedVersion.Any, [eventDeletedEvent]);
                 }
 
                 return Task.FromResult(0);
@@ -241,7 +241,7 @@ namespace SqlStreamStore
                 var messageId = MetadataMessageIdGenerator.Create(metaStreamId, expectedStreamMetadataVersion, json);
                 var newStreamMessage = new NewStreamMessage(messageId, "$stream-metadata", json);
 
-                var result = AppendToStreamInternal(metaStreamId, expectedStreamMetadataVersion, new[] { newStreamMessage });
+                var result = AppendToStreamInternal(metaStreamId, expectedStreamMetadataVersion, [newStreamMessage]);
 
                 await CheckStreamMaxCount(streamId, metadataMessage.MaxCount, cancellationToken);
 
@@ -294,7 +294,7 @@ namespace SqlStreamStore
             _streamIds[_streamIds.IndexOf(streamId)] = null;
 
             var streamDeletedEvent = CreateStreamDeletedMessage(streamId);
-            AppendToStreamInternal(DeletedStreamId, ExpectedVersion.Any, new[] { streamDeletedEvent });
+            AppendToStreamInternal(DeletedStreamId, ExpectedVersion.Any, [streamDeletedEvent]);
         }
 
         protected override Task<ReadAllPage> ReadAllForwardsInternal(long fromPositionExclusive, int maxCount,

@@ -54,7 +54,7 @@
             IsEnd = isEnd;
             Direction = direction;
             _readNext = readNext;
-            Messages = messages ?? new StreamMessage[0];
+            Messages = messages ?? [];
         }
 
         /// <inheritdoc />

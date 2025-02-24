@@ -2,7 +2,7 @@ namespace DomainBlocks.V1.Tests.Integration.Model;
 
 public abstract class MutableEntityBase
 {
-    private readonly List<object> _raisedEvents = new();
+    private readonly List<object> _raisedEvents = [];
 
     public abstract Guid Id { get; }
     public IEnumerable<object> RaisedEvents => _raisedEvents.AsReadOnly();

@@ -7,8 +7,8 @@ public class EventStreamConsumersBuilder<TEvent, TPosition> :
     IEventStreamConsumerBuilderInfrastructure<TEvent, TPosition>
     where TPosition : struct, IEquatable<TPosition>, IComparable<TPosition>
 {
-    private readonly List<IEventStreamConsumerBuilder<TEvent, TPosition>> _consumerBuilders = new();
-    private readonly List<IEventStreamInterceptor<TEvent, TPosition>> _interceptors = new();
+    private readonly List<IEventStreamConsumerBuilder<TEvent, TPosition>> _consumerBuilders = [];
+    private readonly List<IEventStreamInterceptor<TEvent, TPosition>> _interceptors = [];
 
     public EventStreamConsumersBuilder(EventStreamSubscriptionBuilder coreBuilder)
     {

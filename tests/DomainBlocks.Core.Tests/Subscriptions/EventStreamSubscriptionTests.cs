@@ -32,7 +32,7 @@ public class EventStreamSubscriptionTests
         _subscription =
             new EventStreamSubscription<string, int>(
                 _mockEventStream.Object,
-                new[] { _mockConsumer.Object },
+                [_mockConsumer.Object],
                 _queue,
                 _mockPositionComparer.Object);
 
@@ -209,7 +209,7 @@ public class EventStreamSubscriptionTests
 
         var subscription = new EventStreamSubscription<string, int>(
             _mockEventStream.Object,
-            new[] { mockConsumer1.Object, mockConsumer2.Object },
+            [mockConsumer1.Object, mockConsumer2.Object],
             _mockPositionComparer.Object);
 
         var startTask = subscription.StartAsync();

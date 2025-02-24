@@ -213,10 +213,9 @@ public class EntityStoreTests
 
         var entityAdapterRegistry = new EntityAdapterRegistry(
             new Dictionary<Type, IEntityAdapter>(),
-            new[]
-            {
+            [
                 new GenericEntityAdapterFactory(new GenericEntityAdapterTypeResolver(typeof(MutableEntityAdapter<>)))
-            });
+            ]);
 
         var eventTypeMappings = new EventTypeMapping[]
         {

@@ -508,7 +508,7 @@ public
     private const int BUILDER_CAPACITY = 2000;
 
     private static readonly char[] EscapeTable;
-    private static readonly char[] EscapeCharacters = new char[] { '"', '\\', '\b', '\f', '\n', '\r', '\t' };
+    private static readonly char[] EscapeCharacters = ['"', '\\', '\b', '\f', '\n', '\r', '\t'];
     private static readonly string EscapeCharactersString = new string(EscapeCharacters);
 
     static SimpleJson()
@@ -718,7 +718,7 @@ public
 
     static JsonArray ParseArray(char[] json, ref int index, ref bool success)
     {
-        JsonArray array = new JsonArray();
+        JsonArray array = [];
 
         // [
         NextToken(json, ref index);
@@ -1240,15 +1240,15 @@ public
     internal IDictionary<Type, IDictionary<string, ReflectionUtils.GetDelegate>> GetCache;
     internal IDictionary<Type, IDictionary<string, KeyValuePair<Type, ReflectionUtils.SetDelegate>>> SetCache;
 
-    internal static readonly Type[] EmptyTypes = new Type[0];
-    internal static readonly Type[] ArrayConstructorParameterTypes = new Type[] { typeof(int) };
+    internal static readonly Type[] EmptyTypes = [];
+    internal static readonly Type[] ArrayConstructorParameterTypes = [typeof(int)];
 
-    private static readonly string[] Iso8601Format = new string[]
-    {
+    private static readonly string[] Iso8601Format =
+    [
         @"yyyy-MM-dd\THH:mm:ss.FFFFFFF\Z",
         @"yyyy-MM-dd\THH:mm:ss\Z",
         @"yyyy-MM-dd\THH:mm:ssK"
-    };
+    ];
 
     public PocoJsonSerializerStrategy()
     {
@@ -1595,7 +1595,7 @@ internal
 #endif
     class ReflectionUtils
 {
-    private static readonly object[] EmptyObjects = new object[] { };
+    private static readonly object[] EmptyObjects = [];
 
     public delegate object GetDelegate(object source);
     public delegate void SetDelegate(object source, object value);
@@ -1931,7 +1931,7 @@ internal
     public static SetDelegate GetSetMethodByReflection(PropertyInfo propertyInfo)
     {
         MethodInfo methodInfo = GetSetterMethodInfo(propertyInfo);
-        return delegate(object source, object value) { methodInfo.Invoke(source, new object[] { value }); };
+        return delegate(object source, object value) { methodInfo.Invoke(source, [value]); };
     }
 
     public static SetDelegate GetSetMethodByReflection(FieldInfo fieldInfo)

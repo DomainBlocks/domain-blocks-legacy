@@ -3,7 +3,7 @@ namespace DomainBlocks.Core;
 public sealed class ImmutableCommandExecutionContext<TAggregate, TEventBase> : ICommandExecutionContext<TAggregate>
 {
     private readonly IImmutableAggregateType<TAggregate> _aggregateType;
-    private readonly List<object> _raisedEvents = new();
+    private readonly List<object> _raisedEvents = [];
     private TAggregate _state;
 
     public ImmutableCommandExecutionContext(

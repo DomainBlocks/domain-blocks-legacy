@@ -116,7 +116,7 @@ namespace SqlStreamStore
             await AppendMessages(Store, streamId2, 3);
 
             var receiveMessages = new TaskCompletionSource<StreamMessage>();
-            List<StreamMessage> receivedMessages = new List<StreamMessage>();
+            List<StreamMessage> receivedMessages = [];
             using(Store.SubscribeToAll(
                 Position.None,
                 (_, message, __) =>
@@ -168,7 +168,7 @@ namespace SqlStreamStore
             string streamId2 = "stream-2";
 
             var receiveMessages = new TaskCompletionSource<StreamMessage>();
-            List<StreamMessage> receivedMessages = new List<StreamMessage>();
+            List<StreamMessage> receivedMessages = [];
             using (Store.SubscribeToAll(
                 Position.None,
                 (_, message, __) =>
@@ -249,7 +249,7 @@ namespace SqlStreamStore
             await AppendMessages(Store, streamId2, 10);
 
             var receiveMessages = new TaskCompletionSource<StreamMessage>();
-            List<StreamMessage> receivedMessages = new List<StreamMessage>();
+            List<StreamMessage> receivedMessages = [];
             using(var subscription = Store.SubscribeToAll(
                 Position.End,
                 (_, message, __) =>
@@ -279,7 +279,7 @@ namespace SqlStreamStore
         {
             string streamId1 = "stream-1";
             var receiveMessages = new TaskCompletionSource<int>();
-            List<StreamMessage> receivedMessages = new List<StreamMessage>();
+            List<StreamMessage> receivedMessages = [];
             using (var subscription = Store.SubscribeToAll(
                 Position.End,
                 (_, message, __) =>
@@ -419,7 +419,7 @@ namespace SqlStreamStore
 
             var receiveMessage = new TaskCompletionSource<bool>();
             var receiveDeletedMessage = new TaskCompletionSource<StreamMessage>();
-            List<StreamMessage> receivedMessages = new List<StreamMessage>();
+            List<StreamMessage> receivedMessages = [];
             using (var subscription = Store.SubscribeToAll(
                 Position.None,
                 (_, message, __) =>

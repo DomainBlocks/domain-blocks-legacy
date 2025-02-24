@@ -2,7 +2,7 @@ namespace DomainBlocks.Core.Builders;
 
 public sealed class ModelBuilder
 {
-    private readonly List<IAggregateTypeBuilder> _aggregateTypeBuilders = new();
+    private readonly List<IAggregateTypeBuilder> _aggregateTypeBuilders = [];
 
     public ModelBuilder Aggregate<TAggregate, TEventBase>(
         Action<MutableAggregateTypeBuilder<TAggregate, TEventBase>> builderAction) where TEventBase : class

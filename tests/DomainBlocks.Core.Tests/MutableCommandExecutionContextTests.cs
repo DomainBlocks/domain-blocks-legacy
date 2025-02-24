@@ -31,7 +31,7 @@ public class MutableCommandExecutionContextTests
 
     private class MutableAggregate
     {
-        public List<string> ObservedValues { get; } = new();
+        public List<string> ObservedValues { get; } = [];
         public int CallCount { get; private set; }
         private string? Value { get; set; }
 

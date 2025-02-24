@@ -30,7 +30,7 @@ public sealed class ProjectionEventTypeMap
             }
             else
             {
-                copy._eventNameToTypeMap.Add(eventName, new HashSet<Type> { eventType });
+                copy._eventNameToTypeMap.Add(eventName, [eventType]);
             }
         }
 

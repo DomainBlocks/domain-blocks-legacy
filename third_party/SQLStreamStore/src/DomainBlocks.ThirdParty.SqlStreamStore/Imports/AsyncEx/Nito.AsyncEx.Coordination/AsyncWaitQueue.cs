@@ -86,7 +86,7 @@ namespace DomainBlocks.ThirdParty.SqlStreamStore.Imports.AsyncEx.Nito.AsyncEx.Co
     [DebuggerTypeProxy(typeof(DefaultAsyncWaitQueue<>.DebugView))]
     public sealed class DefaultAsyncWaitQueue<T> : IAsyncWaitQueue<T>
     {
-        private readonly Deque<TaskCompletionSource<T>> _queue = new Deque<TaskCompletionSource<T>>();
+        private readonly Deque<TaskCompletionSource<T>> _queue = [];
 
         private int Count
         {
