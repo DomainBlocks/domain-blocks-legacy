@@ -61,9 +61,7 @@ public class ImmutableCommandExecutionContextTests
         }
     }
 
-    private interface IEvent
-    {
-    }
+    private interface IEvent;
 
     private class ValueChangedEvent : IEvent
     {

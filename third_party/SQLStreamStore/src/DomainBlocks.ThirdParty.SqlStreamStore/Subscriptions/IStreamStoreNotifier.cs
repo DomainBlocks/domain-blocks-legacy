@@ -6,6 +6,5 @@ namespace DomainBlocks.ThirdParty.SqlStreamStore.Subscriptions
     ///     Represents an notifier lets subsribers know that the 
     ///     stream store has new messages.
     /// </summary>
-    public interface IStreamStoreNotifier : IObservable<Unit>, IDisposable
-    {}
+    public interface IStreamStoreNotifier : IObservable<Unit>, IDisposable;
 }

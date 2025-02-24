@@ -35,38 +35,22 @@ public class AssemblyAggregateEventTypeBuilderTests
         Assert.Throws<InvalidOperationException>(() => builder.Build());
     }
 
-    private interface IEvent1
-    {
-    }
+    private interface IEvent1;
 
-    private interface IFilterType1
-    {
-    }
+    private interface IFilterType1;
 
-    private class Event1 : IEvent1, IFilterType1
-    {
-    }
+    private class Event1 : IEvent1, IFilterType1;
 
-    private class Event2 : IEvent1, IFilterType1
-    {
-    }
+    private class Event2 : IEvent1, IFilterType1;
 
     // ReSharper disable once UnusedType.Global
-    public abstract class Event3 : IEvent1, IFilterType1
-    {
-    }
+    public abstract class Event3 : IEvent1, IFilterType1;
 
     // Event type without filtering base type should be ignored
     // ReSharper disable once UnusedType.Local
-    private class Event4 : IEvent1
-    {
-    }
+    private class Event4 : IEvent1;
 
-    private interface IEvent2
-    {
-    }
+    private interface IEvent2;
 
-    private interface IFilterType2
-    {
-    }
+    private interface IFilterType2;
 }

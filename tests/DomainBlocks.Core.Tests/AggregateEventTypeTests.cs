@@ -41,11 +41,7 @@ public class AggregateEventTypeTests
         }
     }
 
-    private interface IEvent
-    {
-    }
+    private interface IEvent;
 
-    private class MyEvent : IEvent
-    {
-    }
+    private class MyEvent : IEvent;
 }

@@ -262,9 +262,7 @@ public class ModelBuilderTests
         Assert.That(updatedAggregate.Value, Is.EqualTo("value 3"));
     }
 
-    private interface IEvent
-    {
-    }
+    private interface IEvent;
 
     private record ValueChangedEvent(string Value) : IEvent;
 

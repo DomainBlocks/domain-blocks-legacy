@@ -50,9 +50,7 @@ public class MutableCommandExecutionContextTests
         }
     }
 
-    private interface IEvent
-    {
-    }
+    private interface IEvent;
 
     private class ValueChangedEvent : IEvent
     {
