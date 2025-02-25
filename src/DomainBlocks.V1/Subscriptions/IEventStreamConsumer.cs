@@ -1,4 +1,6 @@
 using DomainBlocks.V1.Abstractions.Subscriptions;
+// ReSharper disable UnusedParameter.Global
+// ReSharper disable UnusedMember.Global
 
 namespace DomainBlocks.V1.Subscriptions;
 

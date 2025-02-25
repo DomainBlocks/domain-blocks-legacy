@@ -48,7 +48,5 @@ public class StateProjectionSubscriberTests
         Assert.That(lastPosition, Is.EqualTo(0));
     }
 
-    private class Event1
-    {
-    }
+    private class Event1;
 }

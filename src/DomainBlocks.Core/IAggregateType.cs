@@ -1,8 +1,6 @@
 namespace DomainBlocks.Core;
 
-public interface IAggregateType : IEventSourcedEntityType
-{
-}
+public interface IAggregateType : IEventSourcedEntityType;
 
 public interface IAggregateType<TAggregate> : IAggregateType, IEventSourcedEntityType<TAggregate>
 {

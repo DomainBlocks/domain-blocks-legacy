@@ -20,9 +20,7 @@ public static class TestEvents
             .ToArray();
     }
 
-    public interface IEvent
-    {
-    }
+    public interface IEvent;
 
     public class Event1 : IEvent
     {

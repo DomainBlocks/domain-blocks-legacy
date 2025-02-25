@@ -3,7 +3,7 @@ namespace DomainBlocks.Core.Builders;
 public sealed class ImmutableAggregateTypeBuilder<TAggregate, TEventBase> :
     AggregateTypeBuilderBase<TAggregate, TEventBase> where TEventBase : class
 {
-    private readonly List<ICommandResultTypeBuilder> _commandResultTypeBuilders = new();
+    private readonly List<ICommandResultTypeBuilder> _commandResultTypeBuilders = [];
 
     public ImmutableAggregateTypeBuilder() : base(new ImmutableAggregateType<TAggregate, TEventBase>())
     {

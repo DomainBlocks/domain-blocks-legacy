@@ -2,7 +2,7 @@ namespace DomainBlocks.V1.Tests.Integration.Model;
 
 public abstract class EntityBase<TState> where TState : StateBase<TState>, new()
 {
-    private readonly List<object> _raisedEvents = new();
+    private readonly List<object> _raisedEvents = [];
     private TState _state = new();
 
     public abstract string Id { get; }

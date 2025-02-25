@@ -75,7 +75,7 @@ namespace DomainBlocks.ThirdParty.SqlStreamStore.Postgres
 
             await using var connection = await OpenConnection(cancellationToken);
             await using var transaction = await connection.BeginTransactionAsync(cancellationToken);
-            await DeleteEventsInternal(streamIdInfo, new[] { eventId }, transaction, cancellationToken);
+            await DeleteEventsInternal(streamIdInfo, [eventId], transaction, cancellationToken);
 
             await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
         }

@@ -37,7 +37,7 @@ namespace DomainBlocks.ThirdParty.SqlStreamStore.Postgres
                         true,
                         ReadDirection.Forward,
                         readNext,
-                        Array.Empty<StreamMessage>());
+                        []);
                 }
 
                 var messages = new List<(StreamMessage message, int? maxAge)>();
@@ -112,7 +112,7 @@ namespace DomainBlocks.ThirdParty.SqlStreamStore.Postgres
                         true,
                         ReadDirection.Backward,
                         readNext,
-                        Array.Empty<StreamMessage>());
+                        []);
                 }
 
                 var messages = new List<(StreamMessage message, int? maxAge)>();

@@ -9,7 +9,7 @@ public class EventTypeMapping
     {
         EventType = eventType;
         EventName = eventName ?? eventType.Name;
-        DeprecatedEventNames = deprecatedEventNames?.ToHashSet() ?? new HashSet<string>();
+        DeprecatedEventNames = deprecatedEventNames?.ToHashSet() ?? [];
     }
 
     public Type EventType { get; }

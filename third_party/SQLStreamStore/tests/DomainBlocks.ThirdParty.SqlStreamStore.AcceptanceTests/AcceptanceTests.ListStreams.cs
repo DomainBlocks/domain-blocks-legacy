@@ -22,7 +22,7 @@ namespace SqlStreamStore
                 await Store.AppendToStream(
                     $"{streamIdPrefix}-{i}",
                     ExpectedVersion.NoStream,
-                    Array.Empty<NewStreamMessage>());
+                    []);
             }
 
             var page = await Store.ListStreams(10);
@@ -50,12 +50,12 @@ namespace SqlStreamStore
                 await Store.AppendToStream(
                     $"{streamIdPrefix}-{i}",
                     ExpectedVersion.NoStream,
-                    Array.Empty<NewStreamMessage>());
+                    []);
 
                 await Store.AppendToStream(
                     $"not-stream-{i}",
                     ExpectedVersion.NoStream,
-                    Array.Empty<NewStreamMessage>());
+                    []);
             }
 
             var page = await Store.ListStreams(Pattern.StartsWith(streamIdPrefix), 10);
@@ -83,12 +83,12 @@ namespace SqlStreamStore
                 await Store.AppendToStream(
                     $"{i}-{streamIdPostfix}",
                     ExpectedVersion.NoStream,
-                    Array.Empty<NewStreamMessage>());
+                    []);
 
                 await Store.AppendToStream(
                     $"{i}-stream-not",
                     ExpectedVersion.NoStream,
-                    Array.Empty<NewStreamMessage>());
+                    []);
             }
 
             var page = await Store.ListStreams(Pattern.EndsWith(streamIdPostfix), 10);

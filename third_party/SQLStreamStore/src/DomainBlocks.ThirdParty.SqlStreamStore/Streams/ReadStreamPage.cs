@@ -85,7 +85,7 @@
             NextStreamVersion = nextStreamVersion;
             ReadDirection = direction;
             IsEnd = isEnd;
-            Messages = messages ?? new StreamMessage[0];
+            Messages = messages ?? [];
             _readNext = readNext ?? ((_, __) => throw new NotSupportedException());
         }
 

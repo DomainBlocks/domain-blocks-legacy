@@ -10,7 +10,7 @@ namespace DomainBlocks.ThirdParty.SqlStreamStore.InMemory
         private readonly GetUtcNow _getUtcNow;
         private readonly Action _onStreamAppended;
         private readonly Func<int> _getNextPosition;
-        private readonly List<InMemoryStreamMessage> _messages = new List<InMemoryStreamMessage>();
+        private readonly List<InMemoryStreamMessage> _messages = [];
         private readonly Dictionary<Guid, InMemoryStreamMessage> _messagesById = new Dictionary<Guid, InMemoryStreamMessage>();
 
         internal InMemoryStream(

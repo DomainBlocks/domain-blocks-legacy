@@ -109,7 +109,7 @@ public class EventStreamConsumerSessionTests
     private class RandomlyFailingConsumer : IEventStreamConsumer, IEventHandler<TestEvent>
     {
         private readonly Random _random = new();
-        private readonly List<TestEvent> _handledEvents = new();
+        private readonly List<TestEvent> _handledEvents = [];
 
         public async Task OnEventAsync(EventHandlerContext<TestEvent> context)
         {

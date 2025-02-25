@@ -262,9 +262,7 @@ public class ModelBuilderTests
         Assert.That(updatedAggregate.Value, Is.EqualTo("value 3"));
     }
 
-    private interface IEvent
-    {
-    }
+    private interface IEvent;
 
     private record ValueChangedEvent(string Value) : IEvent;
 
@@ -276,7 +274,7 @@ public class ModelBuilderTests
 
     private class MutableAggregate
     {
-        private readonly List<IEvent> _raisedEvents = new();
+        private readonly List<IEvent> _raisedEvents = [];
 
         public string? Value { get; private set; }
         public IReadOnlyCollection<IEvent> RaisedEvents => _raisedEvents;
@@ -316,7 +314,7 @@ public class ModelBuilderTests
             Apply(event2);
             Apply(event3);
 
-            return new CommandResult { Events = new[] { event1, event2, event3 } };
+            return new CommandResult { Events = [event1, event2, event3] };
         }
 
         public CommandResult ChangeValueWithCommandResultAndEventsNotApplied(string newValue)
@@ -325,7 +323,7 @@ public class ModelBuilderTests
             var event2 = new ValueChangedEvent($"{newValue} 2");
             var event3 = new ValueChangedEvent($"{newValue} 3");
 
-            return new CommandResult { Events = new[] { event1, event2, event3 } };
+            return new CommandResult { Events = [event1, event2, event3] };
         }
 
         public void Apply(ValueChangedEvent e)
@@ -367,7 +365,7 @@ public class ModelBuilderTests
             var event3 = new ValueChangedEvent($"{state.Value} 3");
             state = state.Apply(event3);
 
-            return new CommandResult { Events = new[] { event1, event2, event3 }, UpdatedState = state };
+            return new CommandResult { Events = [event1, event2, event3], UpdatedState = state };
         }
 
         public CommandResult ChangeValueWithCommandResultAndEventsNotApplied(string newValue)
@@ -376,7 +374,7 @@ public class ModelBuilderTests
             var event2 = new ValueChangedEvent($"{newValue} 2");
             var event3 = new ValueChangedEvent($"{newValue} 3");
 
-            return new CommandResult { Events = new[] { event1, event2, event3 } };
+            return new CommandResult { Events = [event1, event2, event3] };
         }
 
         public ImmutableAggregate Apply(ValueChangedEvent @event)

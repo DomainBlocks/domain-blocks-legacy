@@ -297,7 +297,7 @@ namespace SqlStreamStore
         public async Task Can_create_empty_stream()
         {
             const string streamId = "stream-1";
-            await Store.AppendToStream(streamId, ExpectedVersion.NoStream, new NewStreamMessage[0]);
+            await Store.AppendToStream(streamId, ExpectedVersion.NoStream, []);
 
             var page = await Store.ReadStreamForwards(streamId, StreamVersion.Start, 2);
 
@@ -308,7 +308,7 @@ namespace SqlStreamStore
         public async Task Can_append_to_empty_stream()
         {
             const string streamId = "stream-1";
-            await Store.AppendToStream(streamId, ExpectedVersion.NoStream, new NewStreamMessage[0]);
+            await Store.AppendToStream(streamId, ExpectedVersion.NoStream, []);
 
             var result = await Store.AppendToStream(streamId, ExpectedVersion.EmptyStream, CreateNewStreamMessages(1, 2, 3));
 
@@ -584,7 +584,7 @@ namespace SqlStreamStore
             await Store
                 .AppendToStream(streamId, ExpectedVersion.NoStream, CreateNewStreamMessages(1, 2, 3));
 
-            var result = await Store.AppendToStream(streamId, 2, new NewStreamMessage[0]);
+            var result = await Store.AppendToStream(streamId, 2, []);
 
             result.CurrentVersion.ShouldBe(2);
             result.CurrentPosition.ShouldBeGreaterThanOrEqualTo(Fixture.MinPosition + 2L);
@@ -595,7 +595,7 @@ namespace SqlStreamStore
         {
             const string streamId = "stream-1";
             var result = await Store
-                .AppendToStream(streamId, ExpectedVersion.NoStream, new NewStreamMessage[0]);
+                .AppendToStream(streamId, ExpectedVersion.NoStream, []);
 
             result.CurrentVersion.ShouldBe(-1);
             result.CurrentPosition.ShouldBeLessThan(Fixture.MinPosition);
@@ -621,7 +621,7 @@ namespace SqlStreamStore
         public async Task When_append_to_non_existent_stream_with_empty_collection_of_messages_then_should_create_empty_stream(int expectedVersion)
         {
             const string streamId = "stream-1";
-            await Store.AppendToStream(streamId, expectedVersion, new NewStreamMessage[0]);
+            await Store.AppendToStream(streamId, expectedVersion, []);
 
             var page = await Store.ReadStreamForwards(streamId, StreamVersion.Start, 1);
 
@@ -695,7 +695,7 @@ namespace SqlStreamStore
         [InlineData("stream%id")]
         public async Task When_append_to_stream_with_url_encodable_characters_and_expected_version_empty_stream_then_should_have_expected_result(string streamId)
         {
-            await Store.AppendToStream(streamId, ExpectedVersion.NoStream, Array.Empty<NewStreamMessage>());
+            await Store.AppendToStream(streamId, ExpectedVersion.NoStream, []);
             var result = await Store.AppendToStream(streamId, ExpectedVersion.EmptyStream, CreateNewStreamMessages(1, 2, 3));
 
             result.CurrentVersion.ShouldBe(2);

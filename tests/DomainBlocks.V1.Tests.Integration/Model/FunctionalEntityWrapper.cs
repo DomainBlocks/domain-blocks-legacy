@@ -2,7 +2,7 @@ namespace DomainBlocks.V1.Tests.Integration.Model;
 
 public class FunctionalEntityWrapper<TEntity> where TEntity : IIdentifiable, new()
 {
-    private readonly List<object> _raisedEvents = new();
+    private readonly List<object> _raisedEvents = [];
 
     public Guid Id => Entity.Id;
     public TEntity Entity { get; private set; } = new();

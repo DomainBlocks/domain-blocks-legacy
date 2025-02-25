@@ -5,7 +5,7 @@ namespace Shopping.Domain;
 public class ShoppingCart : AggregateBase
 {
     private Guid _sessionId;
-    private readonly HashSet<string> _items = new();
+    private readonly HashSet<string> _items = [];
 
     public override Guid Id => _sessionId;
 

@@ -66,7 +66,7 @@ public class SqlStreamStoreProjectionTests
                     try
                     {
                         if (exception != null) throw exception;
-                        s.Add(e.SessionId, new List<string>());
+                        s.Add(e.SessionId, []);
                     }
                     finally
                     {

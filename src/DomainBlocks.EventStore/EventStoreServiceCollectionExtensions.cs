@@ -7,7 +7,7 @@ namespace DomainBlocks.EventStore;
 
 public static class EventStoreServiceCollectionExtensions
 {
-    private static readonly object SyncLock = new();
+    private static readonly Lock SyncLock = new();
     private static EventStoreClient? _eventStoreClient;
 
     public static IServiceCollection AddEventStore(this IServiceCollection services, IConfiguration configuration)

@@ -35,7 +35,7 @@ namespace SqlStreamStore
             await Store
                 .SetStreamMetadata(streamId, maxCount: maxCount, metadataJson: "meta");
             await Store
-                .AppendToStream(streamId, ExpectedVersion.NoStream, new NewStreamMessage[0]);
+                .AppendToStream(streamId, ExpectedVersion.NoStream, []);
             await Store
                 .AppendToStream(streamId, expectedVersion, CreateNewStreamMessages(1, 2, 3, 4));
 

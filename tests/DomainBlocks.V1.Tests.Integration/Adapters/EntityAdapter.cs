@@ -1,5 +1,6 @@
 using DomainBlocks.V1.Persistence.Entities;
 using DomainBlocks.V1.Tests.Integration.Model;
+// ReSharper disable UnusedParameter.Local
 
 namespace DomainBlocks.V1.Tests.Integration.Adapters;
 
@@ -7,6 +8,7 @@ public sealed class EntityAdapter<TEntity, TState> : EntityAdapterBase<TEntity, 
     where TEntity : EntityBase<TState>, new()
     where TState : StateBase<TState>, new()
 {
+    // The unused parameters are used dynamically in tests
     public EntityAdapter(int i, string s)
     {
     }

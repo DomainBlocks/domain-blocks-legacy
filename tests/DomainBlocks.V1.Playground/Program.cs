@@ -35,7 +35,7 @@ var subscriber = new EventStreamSubscriptionService(
     "all-events",
     pos => eventStore.SubscribeToAll(pos?.AsGlobalPosition()),
     eventMapper,
-    new[] { consumer });
+    [consumer]);
 
 await subscriber.StartAsync();
 await subscriber.WaitForCompletedAsync();

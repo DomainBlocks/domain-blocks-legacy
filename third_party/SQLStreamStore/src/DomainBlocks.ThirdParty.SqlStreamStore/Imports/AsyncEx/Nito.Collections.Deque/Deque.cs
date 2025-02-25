@@ -552,7 +552,7 @@ namespace DomainBlocks.ThirdParty.SqlStreamStore.Imports.AsyncEx.Nito.Collection
                 return;
             }
 
-            DoInsertRange(index, new[] { item });
+            DoInsertRange(index, [item]);
         }
 
         /// <summary>

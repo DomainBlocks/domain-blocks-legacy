@@ -62,9 +62,7 @@ public class AggregateTypeTests
         Assert.That(aggregateType.MakeSnapshotKey("1"), Is.EqualTo("myPrefixSnapshot-1"));
     }
 
-    private class MyAggregate
-    {
-    }
+    private class MyAggregate;
 
     // ReSharper disable UnusedAutoPropertyAccessor.Local
     private class MyAggregateWithId1
