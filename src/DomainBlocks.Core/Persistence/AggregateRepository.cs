@@ -1,18 +1,14 @@
 ﻿namespace DomainBlocks.Core.Persistence;
 
-public sealed class AggregateRepository : IAggregateRepository
+public sealed class AggregateRepository(
+    IEventsRepository eventsRepository,
+    ISnapshotRepository snapshotRepository,
+    Model model)
+    : IAggregateRepository
 {
-    private readonly IEventsRepository _eventsRepository;
-    private readonly ISnapshotRepository _snapshotRepository;
-    private readonly Model _model;
-
-    public AggregateRepository(
-        IEventsRepository eventsRepository, ISnapshotRepository snapshotRepository, Model model)
-    {
-        _eventsRepository = eventsRepository ?? throw new ArgumentNullException(nameof(eventsRepository));
-        _snapshotRepository = snapshotRepository ?? throw new ArgumentNullException(nameof(snapshotRepository));
-        _model = model ?? throw new ArgumentNullException(nameof(model));
-    }
+    private readonly IEventsRepository _eventsRepository = eventsRepository ?? throw new ArgumentNullException(nameof(eventsRepository));
+    private readonly ISnapshotRepository _snapshotRepository = snapshotRepository ?? throw new ArgumentNullException(nameof(snapshotRepository));
+    private readonly Model _model = model ?? throw new ArgumentNullException(nameof(model));
 
     public async Task<LoadedAggregate<TAggregateState>> LoadAsync<TAggregateState>(
         string id,

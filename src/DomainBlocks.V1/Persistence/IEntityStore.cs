@@ -1,4 +1,6 @@
-﻿namespace DomainBlocks.V1.Persistence;
+﻿using DomainBlocks.V1.Abstractions.Exceptions;
+
+namespace DomainBlocks.V1.Persistence;
 
 public interface IEntityStore
 {

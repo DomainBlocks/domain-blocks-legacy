@@ -172,15 +172,10 @@ public class MetadataSerializationTests
         return JsonSerializer.Deserialize<EventMetadata>(writeEvent.Metadata.Span)!;
     }
 
-    private class TestEvent
+    private class TestEvent(string value)
     {
-        public TestEvent(string value)
-        {
-            Value = value;
-        }
-
         // ReSharper disable once MemberCanBePrivate.Local
         // ReSharper disable once UnusedAutoPropertyAccessor.Local
-        public string Value { get; }
+        public string Value { get; } = value;
     }
 }
