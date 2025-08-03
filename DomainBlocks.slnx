@@ -1,0 +1,68 @@
+<Solution>
+  <Folder Name="/benchmarks/">
+    <Project Path="benchmarks/DomainBlocks.Core.Benchmarks/DomainBlocks.Core.Benchmarks.csproj" />
+  </Folder>
+  <Folder Name="/examples/" />
+  <Folder Name="/examples/shopping/">
+    <File Path="examples/shopping/Directory.Build.props" />
+    <File Path="examples/shopping/docker-compose.arm64.yml" />
+    <File Path="examples/shopping/docker-compose.override.yml" />
+    <File Path="examples/shopping/docker-compose.yml" />
+    <Project Path="examples/shopping/Shopping.Api/Shopping.Api.csproj" />
+    <Project Path="examples/shopping/Shopping.Domain.Events/Shopping.Domain.Events.csproj" />
+    <Project Path="examples/shopping/Shopping.Domain/Shopping.Domain.csproj" />
+    <Project Path="examples/shopping/Shopping.ReadModel/Shopping.ReadModel.csproj" />
+    <Project Path="examples/shopping/Shopping.WriteModel/Shopping.WriteModel.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <File Path="src/Directory.Build.props" />
+    <Project Path="src/DomainBlocks.Core/DomainBlocks.Core.csproj" />
+    <Project Path="src/DomainBlocks.DependencyInjection/DomainBlocks.DependencyInjection.csproj" />
+    <Project Path="src/DomainBlocks.EventStore/DomainBlocks.EventStore.csproj" />
+    <Project Path="src/DomainBlocks.Hosting/DomainBlocks.Hosting.csproj" />
+    <Project Path="src/DomainBlocks.Logging/DomainBlocks.Logging.csproj" />
+    <Project Path="src/DomainBlocks.SqlStreamStore.Postgres/DomainBlocks.SqlStreamStore.Postgres.csproj" />
+    <Project Path="src/DomainBlocks.SqlStreamStore/DomainBlocks.SqlStreamStore.csproj" />
+  </Folder>
+  <Folder Name="/src/v1/">
+    <Project Path="src/DomainBlocks.V1.Abstractions/DomainBlocks.V1.Abstractions.csproj" />
+    <Project Path="src/DomainBlocks.V1.DependencyInjection/DomainBlocks.V1.DependencyInjection.csproj" />
+    <Project Path="src/DomainBlocks.V1.EventStoreDb/DomainBlocks.V1.EventStoreDb.csproj" />
+    <Project Path="src/DomainBlocks.V1.SqlStreamStore/DomainBlocks.V1.SqlStreamStore.csproj" />
+    <Project Path="src/DomainBlocks.V1/DomainBlocks.V1.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <File Path="tests/Directory.Build.props" />
+    <File Path="tests/docker-compose.arm64.yml" />
+    <File Path="tests/docker-compose.yml" />
+    <Project Path="tests/DomainBlocks.Core.Tests/DomainBlocks.Core.Tests.csproj" />
+    <Project Path="tests/DomainBlocks.EventStore.Testing/DomainBlocks.EventStore.Testing.csproj" />
+    <Project Path="tests/DomainBlocks.EventStore.Tests/DomainBlocks.EventStore.Tests.csproj" />
+    <Project Path="tests/DomainBlocks.SqlStreamStore.Tests/DomainBlocks.SqlStreamStore.Tests.csproj" />
+    <Project Path="tests/DomainBlocks.Testing/DomainBlocks.Testing.csproj" />
+  </Folder>
+  <Folder Name="/tests/v1/">
+    <Project Path="tests/DomainBlocks.V1.Playground/DomainBlocks.V1.Playground.csproj" />
+    <Project Path="tests/DomainBlocks.V1.Tests.Integration/DomainBlocks.V1.Tests.Integration.csproj" />
+    <Project Path="tests/DomainBlocks.V1.Tests/DomainBlocks.V1.Tests.csproj" />
+  </Folder>
+  <Folder Name="/third_party/" />
+  <Folder Name="/third_party/SQLStreamStore/">
+    <File Path="third_party/SQLStreamStore/readme.md" />
+  </Folder>
+  <Folder Name="/third_party/SQLStreamStore/src/">
+    <File Path="third_party/SQLStreamStore/src/Directory.Build.props" />
+    <Project Path="third_party/SQLStreamStore/src/DomainBlocks.ThirdParty.SqlStreamStore.Postgres/DomainBlocks.ThirdParty.SqlStreamStore.Postgres.csproj" />
+    <Project Path="third_party/SQLStreamStore/src/DomainBlocks.ThirdParty.SqlStreamStore/DomainBlocks.ThirdParty.SqlStreamStore.csproj" />
+  </Folder>
+  <Folder Name="/third_party/SQLStreamStore/tests/">
+    <File Path="third_party/SQLStreamStore/tests/Directory.Build.props" />
+    <Project Path="third_party/SQLStreamStore/tests/DomainBlocks.ThirdParty.SqlStreamStore.Postgres.Tests/DomainBlocks.ThirdParty.SqlStreamStore.Postgres.Tests.csproj" />
+    <Project Path="third_party/SQLStreamStore/tests/DomainBlocks.ThirdParty.SqlStreamStore.Tests/DomainBlocks.ThirdParty.SqlStreamStore.Tests.csproj" />
+    <Project Path="third_party/SQLStreamStore/tests/DomainBlocks.ThirdParty.SqlStreamStore.TestUtils/DomainBlocks.ThirdParty.SqlStreamStore.TestUtils.csproj" />
+  </Folder>
+  <Folder Name="/_Solution Items/">
+    <File Path="dotnet-tools.json" />
+    <File Path="version.json" />
+  </Folder>
+</Solution>
